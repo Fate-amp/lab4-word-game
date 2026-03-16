@@ -6,14 +6,27 @@ from main import (
     is_lost,
     validate_guess,
 )
+import string
+import random
 
+def guess_letter(mode,guessed_letters):
+    guess=''
+    if mode=='m':
+        guess=input("Enter a letter")
+    else:
+        possible_letters= []
+        for letter in string.ascii_lowercase:
+            if letter not in guessed_letters:
+                possible_letters.append(letter)
+        guess=random.choice(possible_letters)
+    return guess
 
 def play_game():
     secret_word = "hello"
     game = initialize_game(secret_word)
-
+    mode=input("Enter m for playing or a to start auto play: ")
     while not is_won(secret_word, game["guessed_letters"]) and not is_lost(game["lives"]):
-        guess = input("Enter a letter: ")
+        guess = guess_letter(mode,game["guessed_letters"])
         if validate_guess(guess) and guess not in game["guessed_letters"]:
             new_guessed_letters, new_number_of_lives = update_game_state(
                 secret_word, game["guessed_letters"], guess, game["lives"]

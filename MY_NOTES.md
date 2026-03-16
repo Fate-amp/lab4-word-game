@@ -60,3 +60,10 @@ Here are my suggestions for each of the four questions in your file: -->
    - Secret word with repeated letters (all positions should be revealed).
    - Empty, multi-character, or special character input (should prompt again).
    - Secret word containing non-alphabetic characters (should be sanitized or rejected).
+
+
+   <!-- Auto play observations -->
+   I had to find where to implement a function for the guess functionality, which was the main challenge. The rest, implementing the function where it used the random library or asked the user for the input, was fairly straightforward.
+   
+   Question: One thing that must be imporved is the fact that I'm creating an array each time the guess_letter is called, but I'm not sure on how to handle that problem
+   Also I'm not really sure it works for edge cases
