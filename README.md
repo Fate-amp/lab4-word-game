@@ -1,7 +1,42 @@
-**How to run the game**
-run the play.py file which is intended to handle the UI 
-**How to run the tests:**
-1. Activate the virtual environment by running `.venv\Scripts\Activate.ps1`
-2. Run the tests by running `pytest` in the root directory
-**NOTE:**
-Do NOT run `python test_main.y`. That will not show the test results as pytest does
+# Lab 4 Word Game
+
+## Setup (Virtual Environment + Dependencies)
+
+1. Create a virtual environment in the project root:
+
+```powershell
+python -m venv .venv
+```
+
+2. Activate the virtual environment:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+3. Install required packages from `requirements.txt`:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## How To Run The Game
+
+Run the UI entrypoint:
+
+```powershell
+python play.py
+```
+
+## How To Run Tests
+
+1. Make sure the virtual environment is activated.
+2. Run:
+
+```powershell
+pytest
+```
+
+## Note
+
+Do not run `python tests/test_main.py` directly if you want full test reporting; use `pytest` instead.

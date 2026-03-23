@@ -1,5 +1,27 @@
 ### **New Interaction**
 - **Agent Version**: 2.1
+- **Date**: 03-23-2026 10:24
+- **User**: fatemeh.ahmadpour@epita.fr
+- **Prompt**: update readme based on the implementation of virtual env and the installation of packages based on requirements.txt
+- **CoPilot Mode**: Edit
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Updated README.md with setup steps for creating and activating .venv, installing dependencies via pip install -r requirements.txt, plus clarified run and test instructions.
+- **Context and Reasons for Changes**: User requested README updates that reflect virtual environment usage and package installation from requirements.txt in the current project.
+
+### **New Interaction**
+- **Agent Version**: 2.1
+- **Date**: 03-23-2026 10:21
+- **User**: fatemeh.ahmadpour@epita.fr
+- **Prompt**: what's the command to make a requirements.txt?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: No file changes; provided command guidance only.
+- **Context and Reasons for Changes**: User asked for the command to create requirements.txt in a Python project on Windows with an active virtual environment.
+
+### **New Interaction**
+- **Agent Version**: 2.1
 - **Date**: 03-16-2026 14:35
 - **User**: fatemeh.ahmadpour@epita.fr
 - **Prompt**: read copilot instructions and activate the journal logger agent
