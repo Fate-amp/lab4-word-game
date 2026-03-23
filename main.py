@@ -19,7 +19,7 @@ def update_game_state(secret_word: str,
         # Check if guess is in the word (case-insensitive)
         if guess.lower() in secret_word.lower():
             # Only add if not already guessed (case-insensitive)
-            if guess.lower() not in new_guessed_letters and guess.upper() not in new_guessed_letters:
+            if guess.lower() not in new_guessed_letters:
                 new_guessed_letters.append(guess.lower())
         else:
             # Decrement lives for incorrect guess
@@ -27,13 +27,6 @@ def update_game_state(secret_word: str,
 
     return new_guessed_letters, new_number_of_lives
 
-    guessed_letters=[]
-    wrong_letters=[]
-    return {
-        "guessed_letters":guessed_letters,
-        "lives":len(secret_word),
-        "wrong_letters":wrong_letters
-    }
 
 def initialize_game(secret_word: str) -> dict:
     """
@@ -50,13 +43,6 @@ def initialize_game(secret_word: str) -> dict:
         "lives": len(secret_word),
         "wrong_letters": wrong_letters
     }
-    word_state=""
-    for letter in secret_word:
-        if letter in guessed_letters:
-            word_state+=letter
-        else:
-            word_state+="_"
-    return word_state
 
 def display_word_state(secret_word: str, guessed_letters: list[str]) -> str:
     """
@@ -75,7 +61,6 @@ def display_word_state(secret_word: str, guessed_letters: list[str]) -> str:
         else:
             word_state += "_"
     return word_state
-    return all(letter in guessed_letters for letter in secret_word )
 
 def is_won(secret_word: str, guessed_letters: list[str]) -> bool:
     """
@@ -87,7 +72,7 @@ def is_won(secret_word: str, guessed_letters: list[str]) -> bool:
         bool: True if player has won, else False.
     """
     return all(letter in guessed_letters for letter in secret_word)
-    return lives==0
+    
 
 def is_lost(lives: int) -> bool:
     """
@@ -98,6 +83,7 @@ def is_lost(lives: int) -> bool:
         bool: True if player has lost, else False.
     """
     return lives == 0
+
 def validate_guess(guess: str) -> bool:
     """
     Validate if the guess is a single alphabetic character.
@@ -108,7 +94,3 @@ def validate_guess(guess: str) -> bool:
     """
     # Check for single alphabetic character
     return guess.isalpha() and len(guess) == 1
-    valid=True
-    if not guess.isalpha() or len(guess)>1:
-        valid=False
-    return valid
